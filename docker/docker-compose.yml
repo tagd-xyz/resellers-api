@@ -1,0 +1,37 @@
+version: '3.3'
+services:
+  tagd-res-api-proxy:
+    image: nginx
+    container_name: tagd-res-api-proxy
+    hostname: tagd-res-api-proxy
+    restart: unless-stopped
+    command: /proxy_startup.sh
+    ports:
+      - '9114:80'
+    volumes:
+      - '../:/app'
+      - './startup/proxy.sh:/proxy_startup.sh'
+    environment:
+      - 'VIRTUAL_HOST=tagd-res-api.${DEV_DOMAIN}'
+      - 'DTK_VERSION=${DTK_VERSION}'
+      - 'FASTCGI_PASS=tagd-res-api:9000'
+  tagd-res-api:
+    &tagd-res-api
+    image: 'docker.totallydev.com/tagd/docker/api/8.1-buster:dev'
+    container_name: tagd-res-api
+    hostname: tagd-res-api
+    restart: unless-stopped
+    depends_on:
+      - tagd-res-api-proxy
+    volumes:
+      - '~/.ssh:/var/www/.ssh'
+      - '~/.composer:/var/www/.composer'
+      - '../:/app'
+    environment:
+      - 'WWW_DATA_UID=${USER_ID}'
+      - 'WWW_DATA_GUID=${GROUP_ID}'
+      - COMPOSER_INSTALL=1
+networks:
+  default:
+    external:
+      name: dev
