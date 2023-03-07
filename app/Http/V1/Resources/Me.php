@@ -14,13 +14,18 @@ class Me extends JsonResource
      */
     public function toArray($request): array
     {
-        $actors = $this->actors()->map(function ($actor) {
-            return [
-                'type' => strtolower(basename(str_replace('\\', '/', get_class($actor)))),
-                'id' => $actor->id,
-                'name' => $actor->name,
-            ];
-        });
+        $actors = $this
+            ->actors()
+            ->map(function ($actor) {
+                return [
+                    'type' => strtolower(basename(str_replace('\\', '/', get_class($actor)))),
+                    'id' => $actor->id,
+                    'name' => $actor->name,
+                ];
+            })
+            ->filter(function ($actor) {
+                return \App\Models\Role::RESELLER == $actor['type'];
+            });
 
         return [
             'id' => $this->id,

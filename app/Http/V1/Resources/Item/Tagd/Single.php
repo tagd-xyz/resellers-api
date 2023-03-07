@@ -21,18 +21,13 @@ class Single extends JsonResource
             'id' => $this->id,
             'slug' => $this->slug,
             'isRoot' => $this->is_root,
-            // TODO: 'consumer' => new ConsumerSingle($this->whenLoaded('consumer')),
-            'consumer' => new ConsumerSingle($this->consumer),
-            'reseller' => new ResellerSingle($this->reseller),
+            'consumer' => new ConsumerSingle($this->whenLoaded('consumer')),
+            'reseller' => new ResellerSingle($this->whenLoaded('reseller')),
+            'parent' => new self($this->whenLoaded('parent')),
             'item' => new ItemSingle($this->whenLoaded('item')),
             'meta' => $this->meta,
             'createdAt' => $this->created_at,
-            'isActive' => $this->is_active,
-            'activatedAt' => $this->activated_at,
-            'isExpired' => $this->is_expired,
-            'expiredAt' => $this->expired_at,
-            'isTransferred' => $this->is_transferred,
-            'transferredAt' => $this->transferred_at,
+            'status' => $this->status,
         ];
     }
 }
