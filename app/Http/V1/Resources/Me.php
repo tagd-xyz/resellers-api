@@ -21,6 +21,8 @@ class Me extends JsonResource
                     'type' => strtolower(basename(str_replace('\\', '/', get_class($actor)))),
                     'id' => $actor->id,
                     'name' => $actor->name,
+                    'logo' => $actor->logo,
+                    'website' => $actor->website,
                 ];
             })
             ->filter(function ($actor) {
@@ -31,7 +33,7 @@ class Me extends JsonResource
             'id' => $this->id,
             'email' => $this->email,
             'name' => $this->name,
-            'actors' => $actors,
+            'actors' => $actors->toArray(),
         ];
     }
 }
