@@ -12,7 +12,7 @@ if [[ ${ENV} == "production" ]]; then
   kube_config=${KUBE_CONFIG_PROD}
   env_secret="api-env"
   migrations_secret="api-migrations-env"
-  service_account_name="tagd-api"
+  service_account_name="tagd-res-api"
 else
   image_tag="${ENV}-${CI_PIPELINE_ID}"
   release="api-${ENV}"
