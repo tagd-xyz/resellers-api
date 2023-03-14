@@ -4,43 +4,32 @@ source ${DTK_HOME}/lib/helm.sh
 
 NAMESPACE=tagd
 
-API_REGISTRY=docker.totallydev.com/tagd/api
-
 if [[ ${ENV} == "production" ]]; then
   image_tag=${CI_COMMIT_TAG}
-  release="api"
+  release="res-api"
   kube_config=${KUBE_CONFIG_PROD}
-  env_secret="api-env"
-  migrations_secret="api-migrations-env"
-  service_account_name="tagd-res-api"
 else
   image_tag="${ENV}-${CI_PIPELINE_ID}"
-  release="api-${ENV}"
+  release="res-api-${ENV}"
   kube_config=${KUBE_CONFIG_UAT}
-  env_secret="api-env-${ENV}"
-  migrations_secret="api-env-${ENV}"
-  service_account_name=""
+  env_secres="res-api-env-${ENV}"
+  migrations_secres="res-api-env-${ENV}"
 fi
 
 set_chart_values () {
   # images
-  set_chart_value image.apiProxy "${API_REGISTRY}/proxy:${image_tag}"
-  set_chart_value image.api "${API_REGISTRY}/phpfpm:${image_tag}"
+  set_chart_value image.apiProxy "${CI_REGISTRY_IMAGE}/proxy:${image_tag}"
+  set_chart_value image.api "${CI_REGISTRY_IMAGE}/phpfpm:${image_tag}"
 
-  # secrets
-  set_chart_value imagePullSecret.api "gitlab-pull-secret"
+  # secress
+  set_chart_value imagePullSecres.api "gitlab-pull-secres"
 
   # hosts
   set_chart_value host.api ${HOST}
 
-  # secrets
-  set_chart_value secret.api.env ${env_secret}
-  set_chart_value secret.api.migrationsEnv ${migrations_secret}
-
-  # service account - prod uses service accounts for iam role assignment
-  if [[ ! -z ${service_account_name} ]]; then
-    set_chart_value serviceAccountName ${service_account_name}
-  fi
+  # secress
+  set_chart_value secres.api.env ${env_secres}
+  set_chart_value secres.api.migrationsEnv ${migrations_secres}
 
   # replica counts
   set_chart_value replicas.api ${REPLICAS}

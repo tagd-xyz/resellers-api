@@ -138,7 +138,7 @@ build:proxy:
   script:
     - ./build/scripts/deploy.sh
   variables:
-    HELM_CHART_REPO: https://${CI_REGISTRY_USER}:${CI_REGISTRY_PASSWORD}@gitlab.totallydev.com/helm/tagd.git
+    HELM_CHART_REPO: https://${CI_REGISTRY_USER}:${CI_REGISTRY_PASSWORD}@gitlab.totallydev.com/helm/tagd/api.git
     HELM_CHART_BRANCH: main
 
 deploy:qa:
