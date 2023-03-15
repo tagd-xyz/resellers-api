@@ -12,8 +12,8 @@ else
   image_tag="${ENV}-${CI_PIPELINE_ID}"
   release="res-api-${ENV}"
   kube_config=${KUBE_CONFIG_UAT}
-  env_secres="res-api-env-${ENV}"
-  migrations_secres="res-api-env-${ENV}"
+  env_secrets="res-api-env-${ENV}"
+  migrations_secrets="res-api-env-${ENV}"
 fi
 
 set_chart_values () {
@@ -21,15 +21,15 @@ set_chart_values () {
   set_chart_value image.apiProxy "${CI_REGISTRY_IMAGE}/proxy:${image_tag}"
   set_chart_value image.api "${CI_REGISTRY_IMAGE}/phpfpm:${image_tag}"
 
-  # secress
-  set_chart_value imagePullSecres.api "gitlab-pull-secres"
+  # secrets
+  set_chart_value imagePullSecrets.api "gitlab-pull-secrets"
 
   # hosts
   set_chart_value host.api ${HOST}
 
-  # secress
-  set_chart_value secres.api.env ${env_secres}
-  set_chart_value secres.api.migrationsEnv ${migrations_secres}
+  # secrets
+  set_chart_value secrets.api.env ${env_secrets}
+  set_chart_value secrets.api.migrationsEnv ${migrations_secrets}
 
   # replica counts
   set_chart_value replicas.api ${REPLICAS}
