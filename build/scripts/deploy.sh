@@ -28,7 +28,7 @@ set_chart_values () {
   set_chart_value host.api ${HOST}
 
   # secrets
-  set_chart_value secret.api.env ${env_secrets}
+  set_chart_value secret.api.env ${env_secret}
   set_chart_value secret.api.migrationsEnv ${migrations_secret}
 
   # replica counts
