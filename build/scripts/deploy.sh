@@ -22,14 +22,14 @@ set_chart_values () {
   set_chart_value image.api "${CI_REGISTRY_IMAGE}/phpfpm:${image_tag}"
 
   # secrets
-  set_chart_value imagePullSecrets.api "gitlab-pull-secrets"
+  set_chart_value imagePullSecret.api "gitlab-pull-secrets"
 
   # hosts
   set_chart_value host.api ${HOST}
 
   # secrets
-  set_chart_value secrets.api.env ${env_secrets}
-  set_chart_value secrets.api.migrationsEnv ${migrations_secrets}
+  set_chart_value secret.api.env ${env_secrets}
+  set_chart_value secret.api.migrationsEnv ${migrations_secrets}
 
   # replica counts
   set_chart_value replicas.api ${REPLICAS}
