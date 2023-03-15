@@ -50,7 +50,7 @@ quality:
     - .shared_runners
   image: composer:latest
   cache:
-    key: tagd-api-${ENV}
+    key: tagd-res-api-${ENV}
     paths:
       - vendor/
   before_script:
