@@ -28,8 +28,8 @@ services:
       - ~/.composer:/var/www/.composer
       - ../:/app
     environment:
-      - 'WWW_DATA_UID=${USER_ID}'
-      - 'WWW_DATA_GUID=${GROUP_ID}'
+      - WWW_DATA_UID=${USER_ID}
+      - WWW_DATA_GUID=${GROUP_ID}
       - COMPOSER_INSTALL=1
 networks:
   default:
