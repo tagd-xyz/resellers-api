@@ -2,6 +2,8 @@
 
 namespace App\Models\Traits;
 
+use Illuminate\Support\Facades\DB;
+
 trait CreatedFromFirebaseToken
 {
     /**
@@ -10,24 +12,18 @@ trait CreatedFromFirebaseToken
      */
     public static function createFromFirebaseToken(object $payload): static
     {
-        $self = static::firstOrCreate([
-            'firebase_id' => $payload->user_id,
-        ]);
+        return DB::transaction(function () use ($payload) {
+            $self = static::firstOrCreate([
+                'firebase_id' => $payload->user_id,
+            ]);
 
-        if ($self->email != $payload->email ?? null) {
-            $self->email = $payload->email;
-        }
+            if ($self->wasRecentlyCreated === true) {
+                $self->email = $payload->email;
+                $self->name = $payload->name;
+                $self->save();
+            }
 
-        if ($self->name != $payload->name ?? null) {
-            $self->name = $payload->name;
-        }
-
-        if ($self->wasRecentlyCreated) {
-            //TODO assign consumer roles to claim tagds
-        }
-
-        $self->save(); // will save only if fields have changed
-
-        return $self;
+            return $self;
+        }, 5);
     }
 }
