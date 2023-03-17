@@ -21,8 +21,8 @@ class Update extends FormRequest
     {
         return [
             self::NAME => 'string|required',
-            self::LOGO => 'string',
-            self::WEBSITE => 'string',
+            self::LOGO => 'string|nullable',
+            self::WEBSITE => 'string|nullable',
         ];
     }
 }
