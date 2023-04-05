@@ -6,7 +6,7 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class Confirm extends FormRequest
 {
-    public const CONSUMER_ID = 'consumerId';
+    public const CONSUMER_EMAIL = 'consumerEmail';
 
     /**
      * Get the validation rules that apply to the request.
@@ -16,7 +16,7 @@ class Confirm extends FormRequest
     public function rules()
     {
         return [
-            self::CONSUMER_ID => 'string|required',
+            self::CONSUMER_EMAIL => 'string|required',
         ];
     }
 }
