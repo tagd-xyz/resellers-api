@@ -17,8 +17,6 @@ class AccessRequest
     /**
      * Determine whether the user can list.
      *
-     * @param  User  $user
-     * @param  ActorModel  $actor
      * @return mixed
      */
     public function index(User $user, ActorModel $actor)
@@ -52,8 +50,6 @@ class AccessRequest
     /**
      * Determine whether the user can store.
      *
-     * @param  User  $user
-     * @param  ActorModel  $actor
      * @return mixed
      */
     public function store(User $user, ActorModel $actor)

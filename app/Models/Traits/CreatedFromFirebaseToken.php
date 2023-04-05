@@ -6,10 +6,6 @@ use Illuminate\Support\Facades\DB;
 
 trait CreatedFromFirebaseToken
 {
-    /**
-     * @param  object  $payload
-     * @return static
-     */
     public static function createFromFirebaseToken(object $payload): static
     {
         return DB::transaction(function () use ($payload) {

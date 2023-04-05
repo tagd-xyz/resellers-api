@@ -18,8 +18,6 @@ class Item
     /**
      * Determine whether the user can list.
      *
-     * @param  User  $user
-     * @param  ActorModel  $actor
      * @return mixed
      */
     public function index(User $user, ActorModel $actor)
