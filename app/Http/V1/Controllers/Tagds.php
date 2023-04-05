@@ -2,9 +2,9 @@
 
 namespace App\Http\V1\Controllers;
 
+use App\Http\V1\Requests\Tagd\AvailableForResale as AvailableForResaleRequest;
 use App\Http\V1\Requests\Tagd\Confirm as ConfirmRequest;
 use App\Http\V1\Requests\Tagd\Index as IndexRequest;
-use App\Http\V1\Requests\Tagd\AvailableForResale as AvailableForResaleRequest;
 use App\Http\V1\Requests\Tagd\Store as StoreRequest;
 use App\Http\V1\Resources\Item\Tagd\Collection as TagdCollection;
 use App\Http\V1\Resources\Item\Tagd\Single as TagdSingle;
@@ -81,15 +81,20 @@ class Tagds extends Controller
                 'parent',
                 'item',
                 'consumer',
+                'consumer.accessRequests',
                 'reseller',
             ],
-            'filterFunc' => function ($query) use ($actingAs, $request) {
+            'filterFunc' => function (Builder $query) use ($actingAs, $request) {
                 $key = TagdMeta::AVAILABLE_FOR_RESALE;
                 $query
                     ->where("meta->{$key->value}", true)
                     ->where('status', TagdStatus::ACTIVE)
                     ->whereHas('consumer', function (Builder $query) use ($request) {
-                        $query->where('email', $request->get(AvailableForResaleRequest::CONSUMER));
+                        $query
+                            ->where('email', $request->get(AvailableForResaleRequest::CONSUMER))
+                            ->whereHas('accessRequests', function (Builder $query) {
+                                $query->whereNotNull('approved_at')->whereNull('rejected_at');
+                            });
                     })
                     ->whereDoesntHave('children', function (Builder $query) use ($actingAs) {
                         $query
