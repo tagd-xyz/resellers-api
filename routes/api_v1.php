@@ -24,5 +24,9 @@ Route::namespace('\App\Http\V1\Controllers')->group(function () {
         Route::post('tagds/{id}/cancel', 'Tagds@cancel');
 
         Route::get('tagds-available-for-resale', 'Tagds@availableForResale');
+
+        Route::resource('resale-access-requests', 'ResaleAccessRequests')->only([
+            'index', 'store', //'show', 'destroy',
+        ]);
     });
 });

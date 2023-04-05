@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Policies\Item;
+namespace App\Policies\Resale;
 
 use App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
@@ -9,9 +9,8 @@ use Tagd\Core\Models\Actor\Actor as ActorModel;
 use Tagd\Core\Models\Actor\Consumer as ConsumerModel;
 use Tagd\Core\Models\Actor\Reseller as ResellerModel;
 use Tagd\Core\Models\Actor\Retailer as RetailerModel;
-use Tagd\Core\Models\Item\Item as ItemModel;
 
-class Item
+class AccessRequest
 {
     use HandlesAuthorization; // HandlesGenericUsers;
 
@@ -48,26 +47,24 @@ class Item
     //     return Response::allow();
     // }
 
-    // /**
-    //  * Determine whether the user can store.
-    //  *
-    //  * @param  User  $user
-    //  * @param  ActorModel  $actor
-    //  * @return mixed
-    //  */
-    // public function store(User $user, ActorModel $actor)
-    // {
-    //     // TODO
-    //     switch (get_class($actor)) {
-    //         case RetailerModel::class:
-    //             return Response::allow();
-    //             break;
-    //         case ResellerModel::class:
-    //         case ConsumerModel::class:
-    //         default:
-    //             return Response::deny();
-    //     }
-    // }
+    /**
+     * Determine whether the user can store.
+     *
+     * @return mixed
+     */
+    public function store(User $user, ActorModel $actor)
+    {
+        // TODO
+        switch (get_class($actor)) {
+            case ResellerModel::class:
+                return Response::allow();
+                break;
+            case RetailerModel::class:
+            case ConsumerModel::class:
+            default:
+                return Response::deny();
+        }
+    }
 
     // /**
     //  * Determine whether the user can delete details.

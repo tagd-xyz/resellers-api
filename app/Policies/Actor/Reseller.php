@@ -15,9 +15,6 @@ class Reseller
     /**
      * Determine whether the user can update details.
      *
-     * @param  User  $user
-     * @param  ResellerModel  $reseller
-     * @param  ActorModel  $actor
      * @return mixed
      */
     public function update(User $user, ResellerModel $reseller, ActorModel $actor)
