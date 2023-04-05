@@ -186,9 +186,13 @@ class Tagds extends Controller
             'confirm', [$tagd, $this->actingAs($request)]
         );
 
+        $consumersRepo->assertExists(
+            $request->get(ConfirmRequest::CONSUMER_EMAIL)
+        );
+
         $consumer = $consumersRepo
-            ->findById(
-                $request->get(ConfirmRequest::CONSUMER_ID
+            ->findByEmail(
+                $request->get(ConfirmRequest::CONSUMER_EMAIL
                 )
             );
 
