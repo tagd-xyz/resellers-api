@@ -2,13 +2,13 @@
 
 namespace App\Policies\Resale;
 
-use App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 use Illuminate\Auth\Access\Response;
 use Tagd\Core\Models\Actor\Actor as ActorModel;
 use Tagd\Core\Models\Actor\Consumer as ConsumerModel;
 use Tagd\Core\Models\Actor\Reseller as ResellerModel;
 use Tagd\Core\Models\Actor\Retailer as RetailerModel;
+use Tagd\Core\Models\User\User;
 
 class AccessRequest
 {
