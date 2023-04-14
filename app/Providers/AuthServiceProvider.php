@@ -52,7 +52,6 @@ class AuthServiceProvider extends ServiceProvider
                 $payload = (new FirebaseToken($token))->verify($projectId);
 
                 if ($tenantId == $payload->firebase->tenant) {
-                    \Log::info('-----> ' . $payload->user_id);
                     $user = $users->createFromFirebaseToken($payload);
                     $users->assertIsActingAs($user, Reseller::class);
 
