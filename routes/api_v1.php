@@ -17,6 +17,10 @@ Route::namespace('\App\Http\V1\Controllers')->group(function () {
             'update',
         ]);
 
+        Route::resource('resellers.uploads', 'ResellersUploads')->only([
+            'store',
+        ]);
+
         Route::resource('tagds', 'Tagds')->only([
             'index', 'store', 'show', 'destroy',
         ]);
