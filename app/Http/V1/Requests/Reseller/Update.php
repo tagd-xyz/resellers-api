@@ -8,7 +8,7 @@ class Update extends FormRequest
 {
     public const NAME = 'name';
 
-    public const LOGO = 'logo';
+    public const AVATAR_UPLOAD_ID = 'avatarUploadId';
 
     public const WEBSITE = 'website';
 
@@ -21,7 +21,7 @@ class Update extends FormRequest
     {
         return [
             self::NAME => 'string|required',
-            self::LOGO => 'string|nullable',
+            self::AVATAR_UPLOAD_ID => 'string|nullable',
             self::WEBSITE => 'string|nullable',
         ];
     }

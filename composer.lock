@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5aa18362e7003f118cc740a3c2accd22",
+    "content-hash": "2b568bd58cb871b9fae3dc0d765f95dd",
     "packages": [
         {
             "name": "aws/aws-crt-php",
@@ -58,16 +58,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.257.7",
+            "version": "3.258.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "c98199a1459e95ec3ebb597d0c20aa60fc078005"
+                "reference": "ed1bede7fe80a5e1528d6cff530341ad2018a128"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/c98199a1459e95ec3ebb597d0c20aa60fc078005",
-                "reference": "c98199a1459e95ec3ebb597d0c20aa60fc078005",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/ed1bede7fe80a5e1528d6cff530341ad2018a128",
+                "reference": "ed1bede7fe80a5e1528d6cff530341ad2018a128",
                 "shasum": ""
             },
             "require": {
@@ -146,9 +146,9 @@
             "support": {
                 "forum": "https://forums.aws.amazon.com/forum.jspa?forumID=80",
                 "issues": "https://github.com/aws/aws-sdk-php/issues",
-                "source": "https://github.com/aws/aws-sdk-php/tree/3.257.7"
+                "source": "https://github.com/aws/aws-sdk-php/tree/3.258.2"
             },
-            "time": "2023-01-24T19:22:28+00:00"
+            "time": "2023-02-02T19:41:58+00:00"
         },
         {
             "name": "brick/math",
@@ -5496,16 +5496,16 @@
         },
         {
             "name": "tagd/core",
-            "version": "0.0.22",
+            "version": "0.0.26",
             "source": {
                 "type": "git",
                 "url": "https://gitlab.totallydev.com/tagd/packages/core.git",
-                "reference": "262b3dd44ce2978916c16baaffa4bd3103f591d5"
+                "reference": "90ab9734da02a7785f36b5c2fb36c5271308f8ba"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://gitlab.totallydev.com/api/v4/projects/1094/packages/composer/archives/tagd/core.zip?sha=262b3dd44ce2978916c16baaffa4bd3103f591d5",
-                "reference": "262b3dd44ce2978916c16baaffa4bd3103f591d5",
+                "url": "https://gitlab.totallydev.com/api/v4/projects/1094/packages/composer/archives/tagd/core.zip?sha=90ab9734da02a7785f36b5c2fb36c5271308f8ba",
+                "reference": "90ab9734da02a7785f36b5c2fb36c5271308f8ba",
                 "shasum": ""
             },
             "require": {
