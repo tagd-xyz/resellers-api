@@ -1,0 +1,7 @@
+name: fileName
+in: body
+required: true
+description: The name of the file
+schema:
+  type: string
+  example: "image.jpg"

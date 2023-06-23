@@ -1,0 +1,4 @@
+description: A tagds collection
+type: array
+items:
+  $ref: './Single.yml'

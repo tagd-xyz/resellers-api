@@ -1,0 +1,8 @@
+name: imageUploads
+in: body
+required: false
+description: The image uploads
+schema:
+  type: array
+  items:
+    type: string
