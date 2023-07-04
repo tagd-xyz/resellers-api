@@ -7,6 +7,7 @@ use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvid
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Tagd\Core\Models\Actor\Reseller;
+use Tagd\Core\Models\User\Role;
 use Tagd\Core\Repositories\Interfaces\Users\Users;
 
 class AuthServiceProvider extends ServiceProvider
@@ -53,6 +54,7 @@ class AuthServiceProvider extends ServiceProvider
 
                 if ($tenantId == $payload->firebase->tenant) {
                     $user = $users->createFromFirebaseToken($payload);
+                    $user->tenant = Role::RESELLER;
                     $users->assertIsActingAs($user, Reseller::class);
 
                     return $user;
