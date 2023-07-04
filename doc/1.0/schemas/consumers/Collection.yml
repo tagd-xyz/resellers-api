@@ -1,0 +1,4 @@
+description: A consumers collection
+type: array
+items:
+  $ref: './Single.yml'

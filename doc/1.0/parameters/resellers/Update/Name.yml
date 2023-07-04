@@ -1,0 +1,7 @@
+name: name
+in: body
+required: true
+description: The reseller name
+schema:
+  type: string
+  example: "eBay"

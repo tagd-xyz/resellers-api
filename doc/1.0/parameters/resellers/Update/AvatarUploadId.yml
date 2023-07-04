@@ -1,0 +1,7 @@
+name: avatarUploadId
+in: body
+required: true
+description: The avatar upload id
+schema:
+  type: string
+  example: "123"

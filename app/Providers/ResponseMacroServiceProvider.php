@@ -14,16 +14,6 @@ class ResponseMacroServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
-    }
-
-    /**
-     * Bootstrap services.
-     *
-     * @return void
-     */
-    public function boot()
-    {
         Response::macro('withData', function ($data, $status = 200) {
             return Response::json([
                 'status' => $status,
@@ -37,5 +27,15 @@ class ResponseMacroServiceProvider extends ServiceProvider
                 'error' => $error,
             ], $status);
         });
+    }
+
+    /**
+     * Bootstrap services.
+     *
+     * @return void
+     */
+    public function boot()
+    {
+
     }
 }

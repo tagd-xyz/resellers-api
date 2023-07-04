@@ -1,0 +1,12 @@
+description: List of tagds issued
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        code:
+          description: The HTTP status code
+          type: number
+          example: 200
+        data:
+          $ref: './../../schemas/tagds/Collection.yml'

@@ -1,0 +1,8 @@
+name: website
+in: body
+required: true
+description: The website name
+schema:
+  type: string
+  format: url
+  example: "https://www.ebay.co.uk"

@@ -1,0 +1,4 @@
+description: A stock collection
+type: array
+items:
+  $ref: './Single.yml'
