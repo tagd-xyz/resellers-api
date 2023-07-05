@@ -1,0 +1,37 @@
+description: A single tagd
+type: object
+properties:
+  id:
+    description: The tagd ID
+    type: string
+    example: 957f4527-018f-4e83-80e9-4a9c75d78538
+  slug:
+    description: The tagd slug
+    type: string
+    example: 35CJ-5W8H-4VHP-F3C4
+  isRoot:
+    description: Whether the tagd is the root node or not
+    type: boolean
+    example: true
+  consumer:
+    $ref: './../consumers/SingleBrief.yml'
+  reseller:
+    $ref: './../resellers/SingleBrief.yml'
+  parent:
+    type: object
+  item:
+    $ref: './../items/Single.yml'
+  meta:
+    description: The tagd meta
+    type: object
+  createdAt:
+    description: The tagd creation date
+    type: string
+    format: date-time
+    example: "2023-06-19T14:36:33.164758Z"
+  status:
+    description: The tagd status
+    type: string
+
+
+

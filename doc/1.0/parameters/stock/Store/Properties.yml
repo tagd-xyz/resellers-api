@@ -1,0 +1,7 @@
+name: properties
+in: body
+required: false
+description: The stock properties
+schema:
+  type: object
+  example: {brand: "Adidas"}

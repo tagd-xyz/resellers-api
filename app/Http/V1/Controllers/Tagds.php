@@ -15,6 +15,7 @@ use Tagd\Core\Models\Item\TagdMeta;
 use Tagd\Core\Models\Item\TagdStatus;
 use Tagd\Core\Repositories\Interfaces\Actors\Consumers as ConsumersRepo;
 use Tagd\Core\Repositories\Interfaces\Items\Tagds as TagdsRepo;
+use Tagd\Core\Services\Interfaces\ResellerSales as ResellerSalesService;
 
 class Tagds extends Controller
 {
@@ -111,6 +112,7 @@ class Tagds extends Controller
 
     public function store(
         TagdsRepo $tagdsRepo,
+        ResellerSalesService $resellerSalesService,
         StoreRequest $request
     ) {
         $actingAs = $this->actingAs($request);
@@ -124,7 +126,7 @@ class Tagds extends Controller
             $request->get(StoreRequest::TAGD_ID)
         );
 
-        $tagd = $tagdsRepo->createForResale(
+        $tagd = $resellerSalesService->startResellerSale(
             $actingAs,
             $parentTagd
         );
@@ -176,7 +178,7 @@ class Tagds extends Controller
 
     public function confirm(
         ConfirmRequest $request,
-        TagdsRepo $tagdRepo,
+        ResellerSalesService $resellerSalesService,
         ConsumersRepo $consumersRepo,
         string $tagdId
     ) {
@@ -196,7 +198,7 @@ class Tagds extends Controller
                 )
             );
 
-        $tagd = $tagdRepo->confirm($tagd,
+        $tagd = $resellerSalesService->confirm($tagd,
             $consumer
         );
 

@@ -1,0 +1,7 @@
+name: type
+in: body
+required: true
+description: The stock type
+schema:
+  type: string
+  example: "Sneakers"

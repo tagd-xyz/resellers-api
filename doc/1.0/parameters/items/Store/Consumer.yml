@@ -1,0 +1,8 @@
+name: consumer
+in: body
+required: true
+description: The consumer email
+schema:
+  type: string
+  format: email
+  example: "mary123@gmail.com"

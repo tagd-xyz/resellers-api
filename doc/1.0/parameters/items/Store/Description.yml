@@ -1,0 +1,7 @@
+name: description
+in: body
+required: true
+description: The item description
+schema:
+  type: string
+  example: "A very nice pair of sneakers"

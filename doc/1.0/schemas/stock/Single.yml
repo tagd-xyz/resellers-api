@@ -1,0 +1,35 @@
+description: A single stock
+type: object
+properties:
+  id:
+    description: The stock ID
+    type: string
+    example: 957f4527-018f-4e83-80e9-4a9c75d78538
+  name:
+    description: The stock name
+    type: string
+    example: Gazelle
+  type:
+    description: The stock type
+    type: string
+    example: Sneakers
+  retailer:
+    description: The retailer name
+    type: string
+    example: Adidas
+  description:
+    description: The stock description
+    type: string
+    example: A very nice pair of sneakers
+  properties:
+    description: The stock properties
+    type: object
+  createdAt:
+    description: The stock creation date
+    type: string
+    format: date-time
+    example: "2023-06-19T14:36:33.164758Z"
+  images:
+    $ref: './../images/Collection.yml'
+
+

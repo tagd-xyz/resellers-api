@@ -1,0 +1,306 @@
+openapi: '3.0.3'
+info:
+  title: Tagd API for Resellers
+  version: '1.0'
+servers:
+  - url: http://retailers.tagd.localhost:9113/api/v1/status
+    description: Local development
+  - url: https://tagd-ret-api.qa.tclstaging.com/api/v1
+    description: QA
+  - url: https://tagd-ret-api.uat.tclstaging.com/api/v1
+    description: UAT
+
+paths:
+  /status:
+    get:
+      tags:
+        - status
+      summary: Get API status
+      description: Get API status
+      operationId: getStatus
+      responses:
+        '200':
+          $ref: './responses/status/Status.yml'
+        '500':
+          $ref: './responses/common/Unexpected.yml'
+
+  /me:
+    get:
+      tags:
+        - me
+      security:
+        - bearer: []
+      summary: Get current user
+      description: Get current user
+      operationId: getMe
+      responses:
+        '200':
+          $ref: './responses/me/Single.yml'
+        '401':
+          $ref: './responses/common/Unauthorized.yml'
+        '403':
+          $ref: './responses/common/Forbidden.yml'
+        '500':
+          $ref: './responses/common/Unexpected.yml'
+
+  /resellers:
+    put:
+      tags:
+        - resellers
+      security:
+        - bearer: []
+      summary: Update the logged-in reseller
+      description: Update the logged-in reseller
+      operationId: putReseller
+      parameters:
+        - $ref: './parameters/resellers/Update/Name.yml'
+        - $ref: './parameters/resellers/Update/AvatarUploadId.yml'
+        - $ref: './parameters/resellers/Update/Website.yml'
+      responses:
+        '200':
+          $ref: './responses/retailers/Single.yml'
+        '401':
+          $ref: './responses/common/Unauthorized.yml'
+        '403':
+          $ref: './responses/common/Forbidden.yml'
+        '404':
+          $ref: './responses/common/NotFound.yml'
+        '500':
+          $ref: './responses/common/Unexpected.yml'
+
+  /resellers/{resellerId}/uploads:
+    post:
+      tags:
+        - resellers
+      security:
+        - bearer: []
+      summary: Stores an upload for the logged-in reseller
+      description: Stores an upload for the logged-in reseller
+      operationId: putReseller
+      parameters:
+        - $ref: './parameters/resellers/ResellerId.yml'
+        - $ref: './parameters/uploads/Store/FileName.yml'
+      responses:
+        '201':
+          $ref: './responses/uploads/Single.yml'
+        '401':
+          $ref: './responses/common/Unauthorized.yml'
+        '403':
+          $ref: './responses/common/Forbidden.yml'
+        '404':
+          $ref: './responses/common/NotFound.yml'
+        '500':
+          $ref: './responses/common/Unexpected.yml'
+
+  /resale-access-request:
+    post:
+      tags:
+        - resales
+      security:
+        - bearer: []
+      summary: Stores an request to access a customer's items
+      description: Stores an request to access a customer's items
+      operationId: postResaleAccessRequest
+      parameters:
+        - $ref: './parameters/resaleAccessRequests/Consumer.yml'
+      responses:
+        '201':
+          $ref: './responses/resaleAccessRequests/Single.yml'
+        '401':
+          $ref: './responses/common/Unauthorized.yml'
+        '403':
+          $ref: './responses/common/Forbidden.yml'
+        '404':
+          $ref: './responses/common/NotFound.yml'
+        '500':
+          $ref: './responses/common/Unexpected.yml'
+    get:
+      tags:
+        - resales
+      security:
+        - bearer: []
+      summary: Get all requests to access a customer's items
+      description: Get all requests to access a customer's items
+      operationId: getResaleAccessRequest
+      responses:
+        '200':
+          $ref: './responses/resaleAccessRequests/Collection.yml'
+        '401':
+          $ref: './responses/common/Unauthorized.yml'
+        '403':
+          $ref: './responses/common/Forbidden.yml'
+        '404':
+          $ref: './responses/common/NotFound.yml'
+        '500':
+          $ref: './responses/common/Unexpected.yml'
+
+  /tagds-available-for-resale:
+    get:
+      tags:
+        - resales
+      security:
+        - bearer: []
+      summary: Get all tagds available for resale
+      description: Get all tagds available for resale
+      operationId: getTagdsAvailableForResale
+      parameters:
+        - $ref: './parameters/common/PerPage.yml'
+        - $ref: './parameters/common/Page.yml'
+        - $ref: './parameters/common/Direction.yml'
+        - $ref: './parameters/tagdsAvailableForResale/Consumer.yml'
+      responses:
+        '200':
+          $ref: './responses/tagds/Collection.yml'
+        '401':
+          $ref: './responses/common/Unauthorized.yml'
+        '403':
+          $ref: './responses/common/Forbidden.yml'
+        '404':
+          $ref: './responses/common/NotFound.yml'
+        '500':
+          $ref: './responses/common/Unexpected.yml'
+
+  /tagds/{tagdId}/confirm:
+    get:
+      tags:
+        - tagds
+      security:
+        - bearer: []
+      summary: Confirm a Tagd
+      description: Confirm a Tagd
+      operationId: confirmTagds
+      parameters:
+        - $ref: './parameters/tagds/TagdId.yml'
+        - $ref: './parameters/common/Consumer.yml'
+      responses:
+        '200':
+          $ref: './responses/tagds/Single.yml'
+        '401':
+          $ref: './responses/common/Unauthorized.yml'
+        '403':
+          $ref: './responses/common/Forbidden.yml'
+        '404':
+          $ref: './responses/common/NotFound.yml'
+        '500':
+          $ref: './responses/common/Unexpected.yml'
+
+  /tagds/{tagdId}/cancel:
+    get:
+      tags:
+        - tagds
+      security:
+        - bearer: []
+      summary: Cancel a Tagd
+      description: Cancel a Tagd
+      operationId: cancelTagds
+      parameters:
+        - $ref: './parameters/tagds/TagdId.yml'
+      responses:
+        '200':
+          $ref: './responses/tagds/Single.yml'
+        '401':
+          $ref: './responses/common/Unauthorized.yml'
+        '403':
+          $ref: './responses/common/Forbidden.yml'
+        '404':
+          $ref: './responses/common/NotFound.yml'
+        '500':
+          $ref: './responses/common/Unexpected.yml'
+
+  /tagds:
+    get:
+      tags:
+        - tagds
+      security:
+        - bearer: []
+      summary: Get list of tagds for logged-in reseller
+      description: Get list of tagds for logged-in reseller
+      operationId: getTagds
+      parameters:
+        - $ref: './parameters/common/PerPage.yml'
+        - $ref: './parameters/common/Page.yml'
+        - $ref: './parameters/common/Direction.yml'
+      responses:
+        '200':
+          $ref: './responses/tagds/Collection.yml'
+        '401':
+          $ref: './responses/common/Unauthorized.yml'
+        '403':
+          $ref: './responses/common/Forbidden.yml'
+        '404':
+          $ref: './responses/common/NotFound.yml'
+        '500':
+          $ref: './responses/common/Unexpected.yml'
+    post:
+      tags:
+        - tagds
+      security:
+        - bearer: []
+      summary: Add a tagd to the logged-in reseller
+      description: Add a tagd to the logged-in reseller
+      operationId: postTagd
+      parameters:
+        - $ref: './parameters/tagds/Store/TagdId.yml'
+      responses:
+        '201':
+          $ref: './responses/stock/Single.yml'
+        '401':
+          $ref: './responses/common/Unauthorized.yml'
+        '403':
+          $ref: './responses/common/Forbidden.yml'
+        '404':
+          $ref: './responses/common/NotFound.yml'
+        '500':
+          $ref: './responses/common/Unexpected.yml'
+
+  /tagds/{tagdId}:
+    get:
+      tags:
+        - tagds
+      security:
+        - bearer: []
+      summary: Get a tagd by ID
+      description: Get a tagd by ID
+      operationId: showTagds
+      parameters:
+        - $ref: './parameters/tagds/TagdId.yml'
+      responses:
+        '200':
+          $ref: './responses/tagds/Single.yml'
+        '401':
+          $ref: './responses/common/Unauthorized.yml'
+        '403':
+          $ref: './responses/common/Forbidden.yml'
+        '404':
+          $ref: './responses/common/NotFound.yml'
+        '500':
+          $ref: './responses/common/Unexpected.yml'
+    delete:
+      tags:
+        - tagds
+      security:
+        - bearer: []
+      summary: Delete tagd to the logged-in reseller
+      description: Delete tagd to the logged-in reseller
+      operationId: delTagd
+      parameters:
+        - $ref: './parameters/tagds/TagdId.yml'
+      responses:
+        '204':
+          $ref: './responses/common/NoContent.yml'
+        '401':
+          $ref: './responses/common/Unauthorized.yml'
+        '403':
+          $ref: './responses/common/Forbidden.yml'
+        '404':
+          $ref: './responses/common/NotFound.yml'
+        '500':
+          $ref: './responses/common/Unexpected.yml'
+
+
+components:
+  securitySchemes:
+    bearer:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT

@@ -1,0 +1,16 @@
+description: A single reseller
+type: object
+properties:
+  id:
+    description: The reseller ID
+    type: string
+    example: 957f4527-018f-4e83-80e9-4a9c75d78538
+  name:
+    description: The reseller name
+    type: string
+    example: John Smith
+  createdAt:
+    description: The reseller creation date
+    type: string
+    format: date-time
+    example: "2023-06-19T14:36:33.164758Z"

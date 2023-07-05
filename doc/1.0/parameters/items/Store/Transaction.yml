@@ -1,0 +1,7 @@
+name: transaction
+in: body
+required: true
+description: The transaction id
+schema:
+  type: string
+  example: "1234ABC-XXX"
