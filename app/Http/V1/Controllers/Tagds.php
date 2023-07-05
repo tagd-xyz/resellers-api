@@ -178,7 +178,7 @@ class Tagds extends Controller
 
     public function confirm(
         ConfirmRequest $request,
-        TagdsRepo $tagdRepo,
+        ResellerSalesService $resellerSalesService,
         ConsumersRepo $consumersRepo,
         string $tagdId
     ) {
@@ -198,7 +198,7 @@ class Tagds extends Controller
                 )
             );
 
-        $tagd = $tagdRepo->confirm($tagd,
+        $tagd = $resellerSalesService->confirm($tagd,
             $consumer
         );
 
