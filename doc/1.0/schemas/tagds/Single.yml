@@ -9,6 +9,10 @@ properties:
     description: The tagd slug
     type: string
     example: 35CJ-5W8H-4VHP-F3C4
+  trustScore:
+    description: The tagd trust score
+    type: integer
+    example: 10
   isRoot:
     description: Whether the tagd is the root node or not
     type: boolean
