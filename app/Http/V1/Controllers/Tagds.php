@@ -122,6 +122,8 @@ class Tagds extends Controller
             [TagdModel::class, $actingAs]
         );
 
+        // TODO: validate reseller can lists the tagd
+
         $parentTagd = $tagdsRepo->findById(
             $request->get(StoreRequest::TAGD_ID)
         );
@@ -132,7 +134,8 @@ class Tagds extends Controller
         );
 
         return response()->withData(
-            new TagdSingle($tagd)
+            new TagdSingle($tagd),
+            201
         );
     }
 
@@ -173,11 +176,12 @@ class Tagds extends Controller
 
         $tagdRepo->deleteById($tagdId);
 
-        return response()->withData([]);
+        return response()->withData([], 204);
     }
 
     public function confirm(
         ConfirmRequest $request,
+        TagdsRepo $tagdRepo,
         ResellerSalesService $resellerSalesService,
         ConsumersRepo $consumersRepo,
         string $tagdId
@@ -198,7 +202,7 @@ class Tagds extends Controller
                 )
             );
 
-        $tagd = $resellerSalesService->confirm($tagd,
+        $tagd = $resellerSalesService->confirmResale($tagd,
             $consumer
         );
 

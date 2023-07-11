@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Dashboard for /app/app</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="_css/bootstrap.min.css?v=9.2.26" rel="stylesheet" type="text/css">
+  <link href="_css/nv.d3.min.css?v=9.2.26" rel="stylesheet" type="text/css">
+  <link href="_css/style.css?v=9.2.26" rel="stylesheet" type="text/css">
+  <link href="_css/custom.css" rel="stylesheet" type="text/css">
+ </head>
+ <body>
+  <header>
+   <div class="container-fluid">
+    <div class="row">
+     <div class="col-md-12">
+      <nav aria-label="breadcrumb">
+       <ol class="breadcrumb">
+         <li class="breadcrumb-item"><a href="index.html">/app/app</a></li>
+         <li class="breadcrumb-item active">(Dashboard)</li>
+
+       </ol>
+      </nav>
+     </div>
+    </div>
+   </div>
+  </header>
+  <div class="container-fluid">
+   <div class="row">
+    <div class="col-md-12">
+     <h2>Classes</h2>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Coverage Distribution</h3>
+     <div id="classCoverageDistribution" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Complexity</h3>
+     <div id="classComplexity" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Insufficient Coverage</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Class</th>
+         <th class="text-right">Coverage</th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Http/Middleware/AcceptsJson.php.html#7">App\Http\Middleware\AcceptsJson</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Middleware/TrustHosts.php.html#7">App\Http\Middleware\TrustHosts</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/V1/Controllers/ResellersUploads.php.html#12">App\Http\V1\Controllers\ResellersUploads</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/V1/Requests/AvatarRequest/Store.php.html#7">App\Http\V1\Requests\AvatarRequest\Store</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/V1/Requests/Item/Index.php.html#7">App\Http\V1\Requests\Item\Index</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/V1/Resources/Actor/Retailer/Single.php.html#7">App\Http\V1\Resources\Actor\Retailer\Single</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/V1/Resources/Upload/Single.php.html#7">App\Http\V1\Resources\Upload\Single</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Policies/Item/Item.php.html#14">App\Policies\Item\Item</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Providers/BroadcastServiceProvider.php.html#8">App\Providers\BroadcastServiceProvider</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Providers/TelescopeServiceProvider.php.html#10">App\Providers\TelescopeServiceProvider</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/V1/Resources/Traits/HasPagination.php.html#7">App\Http\V1\Resources\Traits\HasPagination</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Providers/AuthServiceProvider.php.html#13">App\Providers\AuthServiceProvider</a></td><td class="text-right">60%</td></tr>
+       <tr><td><a href="Exceptions/Handler.php.html#17">App\Exceptions\Handler</a></td><td class="text-right">62%</td></tr>
+       <tr><td><a href="Providers/AppServiceProvider.php.html#10">App\Providers\AppServiceProvider</a></td><td class="text-right">63%</td></tr>
+       <tr><td><a href="Console/Kernel.php.html#8">App\Console\Kernel</a></td><td class="text-right">66%</td></tr>
+       <tr><td><a href="Policies/Resale/AccessRequest.php.html#13">App\Policies\Resale\AccessRequest</a></td><td class="text-right">75%</td></tr>
+       <tr><td><a href="Http/Middleware/RedirectIfAuthenticated.php.html#10">App\Http\Middleware\RedirectIfAuthenticated</a></td><td class="text-right">80%</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Project Risks</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Class</th>
+         <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Providers/TelescopeServiceProvider.php.html#10">App\Providers\TelescopeServiceProvider</a></td><td class="text-right">90</td></tr>
+       <tr><td><a href="Exceptions/Handler.php.html#17">App\Exceptions\Handler</a></td><td class="text-right">17</td></tr>
+       <tr><td><a href="Policies/Resale/AccessRequest.php.html#13">App\Policies\Resale\AccessRequest</a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Http/V1/Resources/Traits/HasPagination.php.html#7">App\Http\V1\Resources\Traits\HasPagination</a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Providers/AuthServiceProvider.php.html#13">App\Providers\AuthServiceProvider</a></td><td class="text-right">5</td></tr>
+       <tr><td><a href="Providers/AppServiceProvider.php.html#10">App\Providers\AppServiceProvider</a></td><td class="text-right">4</td></tr>
+       <tr><td><a href="Http/Middleware/RedirectIfAuthenticated.php.html#10">App\Http\Middleware\RedirectIfAuthenticated</a></td><td class="text-right">4</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-12">
+     <h2>Methods</h2>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Coverage Distribution</h3>
+     <div id="methodCoverageDistribution" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Complexity</h3>
+     <div id="methodComplexity" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Insufficient Coverage</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Method</th>
+         <th class="text-right">Coverage</th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Console/Kernel.php.html#15"><abbr title="App\Console\Kernel::schedule">schedule</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Middleware/AcceptsJson.php.html#15"><abbr title="App\Http\Middleware\AcceptsJson::handle">handle</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Middleware/TrustHosts.php.html#14"><abbr title="App\Http\Middleware\TrustHosts::hosts">hosts</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/V1/Controllers/ResellersUploads.php.html#19"><abbr title="App\Http\V1\Controllers\ResellersUploads::store">store</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/V1/Requests/AvatarRequest/Store.php.html#16"><abbr title="App\Http\V1\Requests\AvatarRequest\Store::rules">rules</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/V1/Requests/Item/Index.php.html#20"><abbr title="App\Http\V1\Requests\Item\Index::rules">rules</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/V1/Resources/Actor/Retailer/Single.php.html#14"><abbr title="App\Http\V1\Resources\Actor\Retailer\Single::toArray">toArray</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/V1/Resources/Upload/Single.php.html#15"><abbr title="App\Http\V1\Resources\Upload\Single::toArray">toArray</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Policies/Item/Item.php.html#23"><abbr title="App\Policies\Item\Item::index">index</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Providers/BroadcastServiceProvider.php.html#15"><abbr title="App\Providers\BroadcastServiceProvider::boot">boot</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Providers/TelescopeServiceProvider.php.html#17"><abbr title="App\Providers\TelescopeServiceProvider::register">register</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Providers/TelescopeServiceProvider.php.html#45"><abbr title="App\Providers\TelescopeServiceProvider::hideSensitiveRequestDetails">hideSensitiveRequestDetails</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Providers/TelescopeServiceProvider.php.html#67"><abbr title="App\Providers\TelescopeServiceProvider::gate">gate</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/V1/Resources/Traits/HasPagination.php.html#15"><abbr title="App\Http\V1\Resources\Traits\HasPagination::toArray">toArray</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Providers/AppServiceProvider.php.html#17"><abbr title="App\Providers\AppServiceProvider::register">register</abbr></a></td><td class="text-right">25%</td></tr>
+       <tr><td><a href="Providers/AuthServiceProvider.php.html#42"><abbr title="App\Providers\AuthServiceProvider::boot">boot</abbr></a></td><td class="text-right">57%</td></tr>
+       <tr><td><a href="Exceptions/Handler.php.html#53"><abbr title="App\Exceptions\Handler::register">register</abbr></a></td><td class="text-right">62%</td></tr>
+       <tr><td><a href="Policies/Resale/AccessRequest.php.html#55"><abbr title="App\Policies\Resale\AccessRequest::store">store</abbr></a></td><td class="text-right">66%</td></tr>
+       <tr><td><a href="Http/Middleware/RedirectIfAuthenticated.php.html#19"><abbr title="App\Http\Middleware\RedirectIfAuthenticated::handle">handle</abbr></a></td><td class="text-right">80%</td></tr>
+       <tr><td><a href="Providers/AppServiceProvider.php.html#31"><abbr title="App\Providers\AppServiceProvider::boot">boot</abbr></a></td><td class="text-right">85%</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Project Risks</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Method</th>
+         <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Providers/TelescopeServiceProvider.php.html#17"><abbr title="App\Providers\TelescopeServiceProvider::register">register</abbr></a></td><td class="text-right">42</td></tr>
+       <tr><td><a href="Exceptions/Handler.php.html#53"><abbr title="App\Exceptions\Handler::register">register</abbr></a></td><td class="text-right">17</td></tr>
+       <tr><td><a href="Providers/TelescopeServiceProvider.php.html#45"><abbr title="App\Providers\TelescopeServiceProvider::hideSensitiveRequestDetails">hideSensitiveRequestDetails</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Http/V1/Resources/Traits/HasPagination.php.html#15"><abbr title="App\Http\V1\Resources\Traits\HasPagination::toArray">toArray</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Policies/Resale/AccessRequest.php.html#55"><abbr title="App\Policies\Resale\AccessRequest::store">store</abbr></a></td><td class="text-right">5</td></tr>
+       <tr><td><a href="Http/Middleware/RedirectIfAuthenticated.php.html#19"><abbr title="App\Http\Middleware\RedirectIfAuthenticated::handle">handle</abbr></a></td><td class="text-right">4</td></tr>
+       <tr><td><a href="Providers/AuthServiceProvider.php.html#42"><abbr title="App\Providers\AuthServiceProvider::boot">boot</abbr></a></td><td class="text-right">3</td></tr>
+       <tr><td><a href="Providers/AppServiceProvider.php.html#17"><abbr title="App\Providers\AppServiceProvider::register">register</abbr></a></td><td class="text-right">3</td></tr>
+       <tr><td><a href="Providers/AppServiceProvider.php.html#31"><abbr title="App\Providers\AppServiceProvider::boot">boot</abbr></a></td><td class="text-right">2</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <footer>
+    <hr/>
+    <p>
+     <small>Generated by <a href="https://github.com/sebastianbergmann/php-code-coverage" target="_top">php-code-coverage 9.2.26</a> using <a href="https://secure.php.net/" target="_top">PHP 8.1.14</a> and <a href="https://phpunit.de/">PHPUnit 9.6.9</a> at Tue Jul 11 15:38:07 UTC 2023.</small>
+    </p>
+   </footer>
+  </div>
+  <script src="_js/jquery.min.js?v=9.2.26" type="text/javascript"></script>
+  <script src="_js/d3.min.js?v=9.2.26" type="text/javascript"></script>
+  <script src="_js/nv.d3.min.js?v=9.2.26" type="text/javascript"></script>
+  <script type="text/javascript">
+$(document).ready(function() {
+  nv.addGraph(function() {
+    var chart = nv.models.multiBarChart();
+    chart.tooltips(false)
+      .showControls(false)
+      .showLegend(false)
+      .reduceXTicks(false)
+      .staggerLabels(true)
+      .yAxis.tickFormat(d3.format('d'));
+
+    d3.select('#classCoverageDistribution svg')
+      .datum(getCoverageDistributionData([11,0,0,0,0,0,0,4,1,1,0,39], "Class Coverage"))
+      .transition().duration(500).call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  nv.addGraph(function() {
+    var chart = nv.models.multiBarChart();
+    chart.tooltips(false)
+      .showControls(false)
+      .showLegend(false)
+      .reduceXTicks(false)
+      .staggerLabels(true)
+      .yAxis.tickFormat(d3.format('d'));
+
+    d3.select('#methodCoverageDistribution svg')
+      .datum(getCoverageDistributionData([14,0,0,1,0,0,1,2,0,2,0,45], "Method Coverage"))
+      .transition().duration(500).call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  function getCoverageDistributionData(data, label) {
+    var labels = [
+      '0%',
+      '0-10%',
+      '10-20%',
+      '20-30%',
+      '30-40%',
+      '40-50%',
+      '50-60%',
+      '60-70%',
+      '70-80%',
+      '80-90%',
+      '90-100%',
+      '100%'
+    ];
+    var values = [];
+    $.each(labels, function(key) {
+      values.push({x: labels[key], y: data[key]});
+    });
+
+    return [
+      {
+        key: label,
+        values: values,
+        color: "#4572A7"
+      }
+    ];
+  }
+  nv.addGraph(function() {
+    var chart = nv.models.scatterChart()
+      .showDistX(true)
+      .showDistY(true)
+      .showLegend(false)
+      .forceX([0, 100]);
+    chart.tooltipContent(function(graph) {
+      return '<p>' + graph.point.class + '</p>';
+    });
+
+    chart.xAxis.axisLabel('Code Coverage (in percent)');
+    chart.yAxis.axisLabel('Cyclomatic Complexity');
+
+    d3.select('#classComplexity svg')
+      .datum(getComplexityData([[66.66666666666666,2,"<a href=\"Console\/Kernel.php.html#8\">App\\Console\\Kernel<\/a>"],[62.5,11,"<a href=\"Exceptions\/Handler.php.html#17\">App\\Exceptions\\Handler<\/a>"],[100,0,"<a href=\"Http\/Kernel.php.html#7\">App\\Http\\Kernel<\/a>"],[0,1,"<a href=\"Http\/Middleware\/AcceptsJson.php.html#7\">App\\Http\\Middleware\\AcceptsJson<\/a>"],[100,1,"<a href=\"Http\/Middleware\/ApiVersion.php.html#7\">App\\Http\\Middleware\\ApiVersion<\/a>"],[100,1,"<a href=\"Http\/Middleware\/Authenticate.php.html#7\">App\\Http\\Middleware\\Authenticate<\/a>"],[100,0,"<a href=\"Http\/Middleware\/EncryptCookies.php.html#7\">App\\Http\\Middleware\\EncryptCookies<\/a>"],[100,0,"<a href=\"Http\/Middleware\/PreventRequestsDuringMaintenance.php.html#7\">App\\Http\\Middleware\\PreventRequestsDuringMaintenance<\/a>"],[80,4,"<a href=\"Http\/Middleware\/RedirectIfAuthenticated.php.html#10\">App\\Http\\Middleware\\RedirectIfAuthenticated<\/a>"],[100,0,"<a href=\"Http\/Middleware\/TrimStrings.php.html#7\">App\\Http\\Middleware\\TrimStrings<\/a>"],[0,1,"<a href=\"Http\/Middleware\/TrustHosts.php.html#7\">App\\Http\\Middleware\\TrustHosts<\/a>"],[100,0,"<a href=\"Http\/Middleware\/TrustProxies.php.html#8\">App\\Http\\Middleware\\TrustProxies<\/a>"],[100,0,"<a href=\"Http\/Middleware\/VerifyCsrfToken.php.html#7\">App\\Http\\Middleware\\VerifyCsrfToken<\/a>"],[100,1,"<a href=\"Http\/V1\/Controllers\/Controller.php.html#18\">App\\Http\\V1\\Controllers\\Controller<\/a>"],[100,1,"<a href=\"Http\/V1\/Controllers\/Me.php.html#9\">App\\Http\\V1\\Controllers\\Me<\/a>"],[100,2,"<a href=\"Http\/V1\/Controllers\/ResaleAccessRequests.php.html#15\">App\\Http\\V1\\Controllers\\ResaleAccessRequests<\/a>"],[100,1,"<a href=\"Http\/V1\/Controllers\/Resellers.php.html#9\">App\\Http\\V1\\Controllers\\Resellers<\/a>"],[0,1,"<a href=\"Http\/V1\/Controllers\/ResellersUploads.php.html#12\">App\\Http\\V1\\Controllers\\ResellersUploads<\/a>"],[100,1,"<a href=\"Http\/V1\/Controllers\/Status.php.html#7\">App\\Http\\V1\\Controllers\\Status<\/a>"],[100,7,"<a href=\"Http\/V1\/Controllers\/Tagds.php.html#20\">App\\Http\\V1\\Controllers\\Tagds<\/a>"],[100,1,"<a href=\"Http\/V1\/Requests\/AccessRequest\/Store.php.html#7\">App\\Http\\V1\\Requests\\AccessRequest\\Store<\/a>"],[0,1,"<a href=\"Http\/V1\/Requests\/AvatarRequest\/Store.php.html#7\">App\\Http\\V1\\Requests\\AvatarRequest\\Store<\/a>"],[0,1,"<a href=\"Http\/V1\/Requests\/Item\/Index.php.html#7\">App\\Http\\V1\\Requests\\Item\\Index<\/a>"],[100,1,"<a href=\"Http\/V1\/Requests\/Reseller\/Update.php.html#7\">App\\Http\\V1\\Requests\\Reseller\\Update<\/a>"],[100,1,"<a href=\"Http\/V1\/Requests\/Tagd\/AvailableForResale.php.html#7\">App\\Http\\V1\\Requests\\Tagd\\AvailableForResale<\/a>"],[100,1,"<a href=\"Http\/V1\/Requests\/Tagd\/Confirm.php.html#7\">App\\Http\\V1\\Requests\\Tagd\\Confirm<\/a>"],[100,1,"<a href=\"Http\/V1\/Requests\/Tagd\/Index.php.html#7\">App\\Http\\V1\\Requests\\Tagd\\Index<\/a>"],[100,1,"<a href=\"Http\/V1\/Requests\/Tagd\/Store.php.html#7\">App\\Http\\V1\\Requests\\Tagd\\Store<\/a>"],[100,0,"<a href=\"Http\/V1\/Resources\/Actor\/Consumer\/Collection.php.html#7\">App\\Http\\V1\\Resources\\Actor\\Consumer\\Collection<\/a>"],[100,1,"<a href=\"Http\/V1\/Resources\/Actor\/Consumer\/Single.php.html#8\">App\\Http\\V1\\Resources\\Actor\\Consumer\\Single<\/a>"],[100,1,"<a href=\"Http\/V1\/Resources\/Actor\/Consumer\/SingleBrief.php.html#7\">App\\Http\\V1\\Resources\\Actor\\Consumer\\SingleBrief<\/a>"],[100,0,"<a href=\"Http\/V1\/Resources\/Actor\/Reseller\/Collection.php.html#7\">App\\Http\\V1\\Resources\\Actor\\Reseller\\Collection<\/a>"],[100,1,"<a href=\"Http\/V1\/Resources\/Actor\/Reseller\/Single.php.html#8\">App\\Http\\V1\\Resources\\Actor\\Reseller\\Single<\/a>"],[100,1,"<a href=\"Http\/V1\/Resources\/Actor\/Reseller\/SingleBrief.php.html#7\">App\\Http\\V1\\Resources\\Actor\\Reseller\\SingleBrief<\/a>"],[100,0,"<a href=\"Http\/V1\/Resources\/Actor\/Retailer\/Collection.php.html#7\">App\\Http\\V1\\Resources\\Actor\\Retailer\\Collection<\/a>"],[0,1,"<a href=\"Http\/V1\/Resources\/Actor\/Retailer\/Single.php.html#7\">App\\Http\\V1\\Resources\\Actor\\Retailer\\Single<\/a>"],[100,0,"<a href=\"Http\/V1\/Resources\/Item\/Item\/Collection.php.html#7\">App\\Http\\V1\\Resources\\Item\\Item\\Collection<\/a>"],[100,1,"<a href=\"Http\/V1\/Resources\/Item\/Item\/Single.php.html#8\">App\\Http\\V1\\Resources\\Item\\Item\\Single<\/a>"],[100,0,"<a href=\"Http\/V1\/Resources\/Item\/Tagd\/Collection.php.html#7\">App\\Http\\V1\\Resources\\Item\\Tagd\\Collection<\/a>"],[100,1,"<a href=\"Http\/V1\/Resources\/Item\/Tagd\/Single.php.html#10\">App\\Http\\V1\\Resources\\Item\\Tagd\\Single<\/a>"],[100,1,"<a href=\"Http\/V1\/Resources\/Me.php.html#8\">App\\Http\\V1\\Resources\\Me<\/a>"],[100,0,"<a href=\"Http\/V1\/Resources\/Resale\/AccessRequest\/Collection.php.html#7\">App\\Http\\V1\\Resources\\Resale\\AccessRequest\\Collection<\/a>"],[100,1,"<a href=\"Http\/V1\/Resources\/Resale\/AccessRequest\/Single.php.html#8\">App\\Http\\V1\\Resources\\Resale\\AccessRequest\\Single<\/a>"],[0,1,"<a href=\"Http\/V1\/Resources\/Upload\/Single.php.html#7\">App\\Http\\V1\\Resources\\Upload\\Single<\/a>"],[100,2,"<a href=\"Policies\/Actor\/Reseller.php.html#11\">App\\Policies\\Actor\\Reseller<\/a>"],[0,1,"<a href=\"Policies\/Item\/Item.php.html#14\">App\\Policies\\Item\\Item<\/a>"],[100,10,"<a href=\"Policies\/Item\/Tagd.php.html#11\">App\\Policies\\Item\\Tagd<\/a>"],[75,6,"<a href=\"Policies\/Resale\/AccessRequest.php.html#13\">App\\Policies\\Resale\\AccessRequest<\/a>"],[63.63636363636363,4,"<a href=\"Providers\/AppServiceProvider.php.html#10\">App\\Providers\\AppServiceProvider<\/a>"],[60,4,"<a href=\"Providers\/AuthServiceProvider.php.html#13\">App\\Providers\\AuthServiceProvider<\/a>"],[0,1,"<a href=\"Providers\/BroadcastServiceProvider.php.html#8\">App\\Providers\\BroadcastServiceProvider<\/a>"],[100,2,"<a href=\"Providers\/EventServiceProvider.php.html#9\">App\\Providers\\EventServiceProvider<\/a>"],[100,2,"<a href=\"Providers\/ResponseMacroServiceProvider.php.html#8\">App\\Providers\\ResponseMacroServiceProvider<\/a>"],[100,3,"<a href=\"Providers\/RouteServiceProvider.php.html#11\">App\\Providers\\RouteServiceProvider<\/a>"],[0,9,"<a href=\"Providers\/TelescopeServiceProvider.php.html#10\">App\\Providers\\TelescopeServiceProvider<\/a>"],[0,2,"<a href=\"Http\/V1\/Resources\/Traits\/HasPagination.php.html#7\">App\\Http\\V1\\Resources\\Traits\\HasPagination<\/a>"]], 'Class Complexity'))
+      .transition()
+      .duration(500)
+      .call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  nv.addGraph(function() {
+    var chart = nv.models.scatterChart()
+      .showDistX(true)
+      .showDistY(true)
+      .showLegend(false)
+      .forceX([0, 100]);
+    chart.tooltipContent(function(graph) {
+      return '<p>' + graph.point.class + '</p>';
+    });
+
+    chart.xAxis.axisLabel('Code Coverage (in percent)');
+    chart.yAxis.axisLabel('Method Complexity');
+
+    d3.select('#methodComplexity svg')
+      .datum(getComplexityData([[0,1,"<a href=\"Console\/Kernel.php.html#15\">App\\Console\\Kernel::schedule<\/a>"],[100,1,"<a href=\"Console\/Kernel.php.html#25\">App\\Console\\Kernel::commands<\/a>"],[62.5,11,"<a href=\"Exceptions\/Handler.php.html#53\">App\\Exceptions\\Handler::register<\/a>"],[0,1,"<a href=\"Http\/Middleware\/AcceptsJson.php.html#15\">App\\Http\\Middleware\\AcceptsJson::handle<\/a>"],[100,1,"<a href=\"Http\/Middleware\/ApiVersion.php.html#15\">App\\Http\\Middleware\\ApiVersion::handle<\/a>"],[100,1,"<a href=\"Http\/Middleware\/Authenticate.php.html#15\">App\\Http\\Middleware\\Authenticate::redirectTo<\/a>"],[80,4,"<a href=\"Http\/Middleware\/RedirectIfAuthenticated.php.html#19\">App\\Http\\Middleware\\RedirectIfAuthenticated::handle<\/a>"],[0,1,"<a href=\"Http\/Middleware\/TrustHosts.php.html#14\">App\\Http\\Middleware\\TrustHosts::hosts<\/a>"],[100,1,"<a href=\"Http\/V1\/Controllers\/Controller.php.html#24\">App\\Http\\V1\\Controllers\\Controller::actingAs<\/a>"],[100,1,"<a href=\"Http\/V1\/Controllers\/Me.php.html#16\">App\\Http\\V1\\Controllers\\Me::show<\/a>"],[100,1,"<a href=\"Http\/V1\/Controllers\/ResaleAccessRequests.php.html#22\">App\\Http\\V1\\Controllers\\ResaleAccessRequests::index<\/a>"],[100,1,"<a href=\"Http\/V1\/Controllers\/ResaleAccessRequests.php.html#48\">App\\Http\\V1\\Controllers\\ResaleAccessRequests::store<\/a>"],[100,1,"<a href=\"Http\/V1\/Controllers\/Resellers.php.html#11\">App\\Http\\V1\\Controllers\\Resellers::update<\/a>"],[0,1,"<a href=\"Http\/V1\/Controllers\/ResellersUploads.php.html#19\">App\\Http\\V1\\Controllers\\ResellersUploads::store<\/a>"],[100,1,"<a href=\"Http\/V1\/Controllers\/Status.php.html#14\">App\\Http\\V1\\Controllers\\Status::index<\/a>"],[100,1,"<a href=\"Http\/V1\/Controllers\/Tagds.php.html#27\">App\\Http\\V1\\Controllers\\Tagds::index<\/a>"],[100,1,"<a href=\"Http\/V1\/Controllers\/Tagds.php.html#65\">App\\Http\\V1\\Controllers\\Tagds::availableForResale<\/a>"],[100,1,"<a href=\"Http\/V1\/Controllers\/Tagds.php.html#113\">App\\Http\\V1\\Controllers\\Tagds::store<\/a>"],[100,1,"<a href=\"Http\/V1\/Controllers\/Tagds.php.html#142\">App\\Http\\V1\\Controllers\\Tagds::show<\/a>"],[100,1,"<a href=\"Http\/V1\/Controllers\/Tagds.php.html#166\">App\\Http\\V1\\Controllers\\Tagds::destroy<\/a>"],[100,1,"<a href=\"Http\/V1\/Controllers\/Tagds.php.html#182\">App\\Http\\V1\\Controllers\\Tagds::confirm<\/a>"],[100,1,"<a href=\"Http\/V1\/Controllers\/Tagds.php.html#214\">App\\Http\\V1\\Controllers\\Tagds::cancel<\/a>"],[100,1,"<a href=\"Http\/V1\/Requests\/AccessRequest\/Store.php.html#16\">App\\Http\\V1\\Requests\\AccessRequest\\Store::rules<\/a>"],[0,1,"<a href=\"Http\/V1\/Requests\/AvatarRequest\/Store.php.html#16\">App\\Http\\V1\\Requests\\AvatarRequest\\Store::rules<\/a>"],[0,1,"<a href=\"Http\/V1\/Requests\/Item\/Index.php.html#20\">App\\Http\\V1\\Requests\\Item\\Index::rules<\/a>"],[100,1,"<a href=\"Http\/V1\/Requests\/Reseller\/Update.php.html#20\">App\\Http\\V1\\Requests\\Reseller\\Update::rules<\/a>"],[100,1,"<a href=\"Http\/V1\/Requests\/Tagd\/AvailableForResale.php.html#22\">App\\Http\\V1\\Requests\\Tagd\\AvailableForResale::rules<\/a>"],[100,1,"<a href=\"Http\/V1\/Requests\/Tagd\/Confirm.php.html#16\">App\\Http\\V1\\Requests\\Tagd\\Confirm::rules<\/a>"],[100,1,"<a href=\"Http\/V1\/Requests\/Tagd\/Index.php.html#20\">App\\Http\\V1\\Requests\\Tagd\\Index::rules<\/a>"],[100,1,"<a href=\"Http\/V1\/Requests\/Tagd\/Store.php.html#16\">App\\Http\\V1\\Requests\\Tagd\\Store::rules<\/a>"],[100,1,"<a href=\"Http\/V1\/Resources\/Actor\/Consumer\/Single.php.html#15\">App\\Http\\V1\\Resources\\Actor\\Consumer\\Single::toArray<\/a>"],[100,1,"<a href=\"Http\/V1\/Resources\/Actor\/Consumer\/SingleBrief.php.html#14\">App\\Http\\V1\\Resources\\Actor\\Consumer\\SingleBrief::toArray<\/a>"],[100,1,"<a href=\"Http\/V1\/Resources\/Actor\/Reseller\/Single.php.html#15\">App\\Http\\V1\\Resources\\Actor\\Reseller\\Single::toArray<\/a>"],[100,1,"<a href=\"Http\/V1\/Resources\/Actor\/Reseller\/SingleBrief.php.html#14\">App\\Http\\V1\\Resources\\Actor\\Reseller\\SingleBrief::toArray<\/a>"],[0,1,"<a href=\"Http\/V1\/Resources\/Actor\/Retailer\/Single.php.html#14\">App\\Http\\V1\\Resources\\Actor\\Retailer\\Single::toArray<\/a>"],[100,1,"<a href=\"Http\/V1\/Resources\/Item\/Item\/Single.php.html#15\">App\\Http\\V1\\Resources\\Item\\Item\\Single::toArray<\/a>"],[100,1,"<a href=\"Http\/V1\/Resources\/Item\/Tagd\/Single.php.html#17\">App\\Http\\V1\\Resources\\Item\\Tagd\\Single::toArray<\/a>"],[100,1,"<a href=\"Http\/V1\/Resources\/Me.php.html#15\">App\\Http\\V1\\Resources\\Me::toArray<\/a>"],[100,1,"<a href=\"Http\/V1\/Resources\/Resale\/AccessRequest\/Single.php.html#15\">App\\Http\\V1\\Resources\\Resale\\AccessRequest\\Single::toArray<\/a>"],[0,1,"<a href=\"Http\/V1\/Resources\/Upload\/Single.php.html#15\">App\\Http\\V1\\Resources\\Upload\\Single::toArray<\/a>"],[100,2,"<a href=\"Policies\/Actor\/Reseller.php.html#20\">App\\Policies\\Actor\\Reseller::update<\/a>"],[0,1,"<a href=\"Policies\/Item\/Item.php.html#23\">App\\Policies\\Item\\Item::index<\/a>"],[100,1,"<a href=\"Policies\/Item\/Tagd.php.html#20\">App\\Policies\\Item\\Tagd::index<\/a>"],[100,1,"<a href=\"Policies\/Item\/Tagd.php.html#30\">App\\Policies\\Item\\Tagd::store<\/a>"],[100,2,"<a href=\"Policies\/Item\/Tagd.php.html#40\">App\\Policies\\Item\\Tagd::show<\/a>"],[100,2,"<a href=\"Policies\/Item\/Tagd.php.html#52\">App\\Policies\\Item\\Tagd::destroy<\/a>"],[100,2,"<a href=\"Policies\/Item\/Tagd.php.html#64\">App\\Policies\\Item\\Tagd::confirm<\/a>"],[100,2,"<a href=\"Policies\/Item\/Tagd.php.html#76\">App\\Policies\\Item\\Tagd::cancel<\/a>"],[100,1,"<a href=\"Policies\/Resale\/AccessRequest.php.html#22\">App\\Policies\\Resale\\AccessRequest::index<\/a>"],[66.66666666666666,5,"<a href=\"Policies\/Resale\/AccessRequest.php.html#55\">App\\Policies\\Resale\\AccessRequest::store<\/a>"],[25,2,"<a href=\"Providers\/AppServiceProvider.php.html#17\">App\\Providers\\AppServiceProvider::register<\/a>"],[85.71428571428571,2,"<a href=\"Providers\/AppServiceProvider.php.html#31\">App\\Providers\\AppServiceProvider::boot<\/a>"],[100,1,"<a href=\"Providers\/AuthServiceProvider.php.html#33\">App\\Providers\\AuthServiceProvider::register<\/a>"],[57.14285714285714,3,"<a href=\"Providers\/AuthServiceProvider.php.html#42\">App\\Providers\\AuthServiceProvider::boot<\/a>"],[0,1,"<a href=\"Providers\/BroadcastServiceProvider.php.html#15\">App\\Providers\\BroadcastServiceProvider::boot<\/a>"],[100,1,"<a href=\"Providers\/EventServiceProvider.php.html#35\">App\\Providers\\EventServiceProvider::boot<\/a>"],[100,1,"<a href=\"Providers\/EventServiceProvider.php.html#45\">App\\Providers\\EventServiceProvider::shouldDiscoverEvents<\/a>"],[100,1,"<a href=\"Providers\/ResponseMacroServiceProvider.php.html#15\">App\\Providers\\ResponseMacroServiceProvider::register<\/a>"],[100,1,"<a href=\"Providers\/ResponseMacroServiceProvider.php.html#37\">App\\Providers\\ResponseMacroServiceProvider::boot<\/a>"],[100,1,"<a href=\"Providers\/RouteServiceProvider.php.html#27\">App\\Providers\\RouteServiceProvider::boot<\/a>"],[100,2,"<a href=\"Providers\/RouteServiceProvider.php.html#50\">App\\Providers\\RouteServiceProvider::configureRateLimiting<\/a>"],[0,6,"<a href=\"Providers\/TelescopeServiceProvider.php.html#17\">App\\Providers\\TelescopeServiceProvider::register<\/a>"],[0,2,"<a href=\"Providers\/TelescopeServiceProvider.php.html#45\">App\\Providers\\TelescopeServiceProvider::hideSensitiveRequestDetails<\/a>"],[0,1,"<a href=\"Providers\/TelescopeServiceProvider.php.html#67\">App\\Providers\\TelescopeServiceProvider::gate<\/a>"],[0,2,"<a href=\"Http\/V1\/Resources\/Traits\/HasPagination.php.html#15\">App\\Http\\V1\\Resources\\Traits\\HasPagination::toArray<\/a>"]], 'Method Complexity'))
+      .transition()
+      .duration(500)
+      .call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  function getComplexityData(data, label) {
+    var values = [];
+    $.each(data, function(key) {
+      var value = Math.round(data[key][0]*100) / 100;
+      values.push({
+        x: value,
+        y: data[key][1],
+        class: data[key][2],
+        size: 0.05,
+        shape: 'diamond'
+      });
+    });
+
+    return [
+      {
+        key: label,
+        values: values,
+        color: "#4572A7"
+      }
+    ];
+  }
+});
+  </script>
+ </body>
+</html>

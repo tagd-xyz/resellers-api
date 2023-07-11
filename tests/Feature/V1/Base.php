@@ -2,6 +2,7 @@
 
 namespace Tests\Feature\V1;
 
+use Illuminate\Support\Facades\Notification;
 use Tagd\Core\Database\Seeders\Traits\UsesFactories;
 use Tests\TestCase;
 
@@ -15,6 +16,14 @@ abstract class Base extends TestCase
 
     public const URL_ME = '/api/v1/me';
 
+    public const URL_RESELLERS = 'api/v1/resellers';
+
+    public const URL_RESALE_ACCESS_REQUESTS = '/api/v1/resale-access-requests';
+
+    public const URL_TAGDS = '/api/v1/tagds';
+
+    public const URL_TAGDS_AVAILABLE_FOR_RESALE = '/api/v1/tagds-available-for-resale';
+
     /**
      * setUp any test
      */
@@ -25,6 +34,8 @@ abstract class Base extends TestCase
         $this->withHeaders([
             'Accept' => 'application/json',
         ]);
+
+        Notification::fake();
 
         $this->setupFactories();
     }

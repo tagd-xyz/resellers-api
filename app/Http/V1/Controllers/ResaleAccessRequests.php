@@ -68,7 +68,8 @@ class ResaleAccessRequests extends Controller
             ]);
 
         return response()->withData(
-            new AccessRequestSingle($accessRequest)
+            new AccessRequestSingle($accessRequest),
+            201
         );
     }
 
