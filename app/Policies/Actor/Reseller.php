@@ -19,7 +19,8 @@ class Reseller
      */
     public function update(User $user, ResellerModel $reseller, ActorModel $actor)
     {
-        // TODO: check ownership
-        return Response::allow();
+        return $reseller->id == $actor->id
+            ? Response::allow()
+            : Response::deny();
     }
 }
