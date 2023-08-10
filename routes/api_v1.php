@@ -32,5 +32,13 @@ Route::namespace('\App\Http\V1\Controllers')->group(function () {
         Route::resource('resale-access-requests', 'ResaleAccessRequests')->only([
             'index', 'store', //'show', 'destroy',
         ]);
+
+        Route::group(['namespace' => 'Ref'], function () {
+            Route::prefix('ref')->group(function () {
+                Route::resource('currencies', 'Currencies')->only([
+                    'index',
+                ]);
+            });
+        });
     });
 });

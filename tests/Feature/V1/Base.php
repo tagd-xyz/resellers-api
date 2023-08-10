@@ -24,6 +24,8 @@ abstract class Base extends TestCase
 
     public const URL_TAGDS_AVAILABLE_FOR_RESALE = '/api/v1/tagds-available-for-resale';
 
+    public const URL_REF_CURRENCIES = '/api/v1/ref/currencies';
+
     /**
      * setUp any test
      */

@@ -25,6 +25,10 @@ class PostTest extends Base
             ->actingAsAReseller($reseller)
             ->post(static::URL_TAGDS . '/' . $tagd->id . '/confirm', [
                 'consumerEmail' => 'consumer@gmail.com',
+                'price' => [
+                    'amount' => 100,
+                    'currency' => 'GBP',
+                ],
             ])
             ->assertStatus(200)
             ->assertJsonStructure([
@@ -54,6 +58,7 @@ class PostTest extends Base
             ->actingAsAReseller($reseller)
             ->post(static::URL_TAGDS . '/' . $tagd->id . '/confirm', [
                 // 'consumerEmail' => 'consumer@gmail.com',
+                // 'price'
             ])
             ->assertStatus(422)
             ->assertJsonPath('error.details.consumerEmail.0', 'The consumer email field is required.');
@@ -76,6 +81,10 @@ class PostTest extends Base
             // ->actingAsAReseller($reseller)
             ->post(static::URL_TAGDS . '/' . $tagd->id . '/confirm', [
                 'consumerEmail' => 'consumer@gmail.com',
+                'price' => [
+                    'amount' => 100,
+                    'currency' => 'GBP',
+                ],
             ])
             ->assertStatus(403);
     }
@@ -97,6 +106,10 @@ class PostTest extends Base
             ->actingAsAReseller($reseller)
             ->post(static::URL_TAGDS . '/' . '123' . '/confirm', [
                 'consumerEmail' => 'consumer@gmail.com',
+                'price' => [
+                    'amount' => 100,
+                    'currency' => 'GBP',
+                ],
             ])
             ->assertStatus(404);
     }
