@@ -206,7 +206,8 @@ class Tagds extends Controller
             $consumer,
             [
                 'price' => $request->get(ConfirmRequest::PRICE),
-            ]
+                'location' => $request->get(ConfirmRequest::LOCATION),
+            ],
         );
 
         return response()->withData(
