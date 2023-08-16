@@ -26,6 +26,8 @@ abstract class Base extends TestCase
 
     public const URL_REF_CURRENCIES = '/api/v1/ref/currencies';
 
+    public const URL_REF_COUNTRIES = '/api/v1/ref/countries';
+
     /**
      * setUp any test
      */

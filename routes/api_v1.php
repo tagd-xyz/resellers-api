@@ -38,6 +38,9 @@ Route::namespace('\App\Http\V1\Controllers')->group(function () {
                 Route::resource('currencies', 'Currencies')->only([
                     'index',
                 ]);
+                Route::resource('countries', 'Countries')->only([
+                    'index',
+                ]);
             });
         });
     });
