@@ -8,6 +8,8 @@ class Confirm extends FormRequest
 {
     public const CONSUMER_EMAIL = 'consumerEmail';
 
+    public const PRICE = 'price';
+
     /**
      * Get the validation rules that apply to the request.
      *
@@ -17,6 +19,10 @@ class Confirm extends FormRequest
     {
         return [
             self::CONSUMER_EMAIL => 'string|required',
+
+            self::PRICE => 'array|required',
+            self::PRICE . '.amount' => 'numeric|required',
+            self::PRICE . '.currency' => 'string|required',
         ];
     }
 }

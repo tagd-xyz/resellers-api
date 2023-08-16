@@ -203,7 +203,10 @@ class Tagds extends Controller
             );
 
         $tagd = $resellerSalesService->confirmResale($tagd,
-            $consumer
+            $consumer,
+            [
+                'price' => $request->get(ConfirmRequest::PRICE),
+            ]
         );
 
         return response()->withData(
