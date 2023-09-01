@@ -147,6 +147,9 @@ class Tagds extends Controller
         $tagd = $tagdRepo->findById($tagdId, [
             'relations' => [
                 'parent',
+                'parent.consumer',
+                'children',
+                'children.consumer',
                 'item',
                 'consumer',
                 'reseller',
