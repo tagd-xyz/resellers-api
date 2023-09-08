@@ -22,7 +22,6 @@ class Resellers extends Controller
 
         $reseller = $resellersRepo->update($resellerId, [
             'name' => $request->get(UpdateRequest::NAME),
-            // 'avatar_upload_id' => $request->get(UpdateRequest::AVATAR_UPLOAD_ID),
             'website' => $request->get(UpdateRequest::WEBSITE),
         ]);
 
