@@ -17,19 +17,17 @@ class Me extends JsonResource
         $actors = $this
             ->actors()
             ->map(function ($actor) {
-                // dd($actor->avatar_small_url);
                 return [
                     'type' => strtolower(basename(str_replace('\\', '/', get_class($actor)))),
                     'id' => $actor->id,
                     'name' => $actor->name,
-                    'avatarUploadId' => $actor->avatar_upload_id,
-                    'logoUrl' => $actor->avatar_url,
-                    'logoSmallUrl' => $actor->avatar_small_url,
+                    'logoUrl' => $actor->avatar->url ?? null,
+                    'logoSmallUrl' => $actor->avatar->small_url ?? null,
                     'website' => $actor->website,
                 ];
             })
             ->filter(function ($actor) {
-                return Role::RESELLER == $actor['type'];
+                return $actor['type'] == Role::RESELLER;
             });
 
         return [

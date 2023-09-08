@@ -17,8 +17,8 @@ class Single extends JsonResource
         return [
             'id' => $this->id,
             'name' => $this->name,
-            'logoUrl' => $this->avatar_small_url,
-            'logoSmallUrl' => $this->avatar_url,
+            'logoUrl' => $this->avatar->small_url ?? null,
+            'logoSmallUrl' => $this->avatar->url ?? null,
             'website' => $this->website,
             'createdAt' => $this->created_at,
             'tagds' => new TagdCollection($this->whenLoaded('tagds')),
