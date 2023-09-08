@@ -44,6 +44,8 @@ class Tagds extends Controller
                 'parent',
                 'parent.consumer',
                 'item',
+                'item.images',
+                'item.images.upload',
                 'consumer',
                 'reseller',
             ],
