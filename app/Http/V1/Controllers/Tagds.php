@@ -92,11 +92,13 @@ class Tagds extends Controller
                 $query
                     ->where("meta->{$key->value}", true)
                     ->where('status', TagdStatus::ACTIVE)
-                    ->whereHas('consumer', function (Builder $query) use ($request) {
+                    ->whereHas('consumer', function (Builder $query) use ($request, $actingAs) {
                         $query
                             ->where('email', $request->get(AvailableForResaleRequest::CONSUMER))
-                            ->whereHas('accessRequests', function (Builder $query) {
-                                $query->whereNotNull('approved_at')->whereNull('rejected_at');
+                            ->whereHas('accessRequests', function (Builder $query) use ($actingAs) {
+                                $query
+                                    ->whereNotNull('approved_at')->whereNull('rejected_at')
+                                    ->where('reseller_id', $actingAs->id);
                             });
                     })
                     ->whereDoesntHave('children', function (Builder $query) use ($actingAs) {
