@@ -31,6 +31,18 @@ services:
       - WWW_DATA_UID=${USER_ID}
       - WWW_DATA_GUID=${GROUP_ID}
       - COMPOSER_INSTALL=1
+  tagd-res-api-queue:
+    <<: *tagd-res-api
+    container_name: tagd-res-api-queue
+    hostname: tagd-res-api-queue
+    working_dir: /app
+    entrypoint: ["php", "artisan", "queue:work"]
+  tagd-res-api-schedule:
+    <<: *tagd-res-api
+    container_name: tagd-res-api-schedule
+    hostname: tagd-res-api-schedule
+    working_dir: /app
+    entrypoint: ["php", "artisan", "schedule:work"]
 networks:
   default:
     name: dev

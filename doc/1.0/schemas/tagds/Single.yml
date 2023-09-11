@@ -17,6 +17,8 @@ properties:
     description: Whether the tagd is the root node or not
     type: boolean
     example: true
+  children:
+    $ref: './Collection.yml'
   consumer:
     $ref: './../consumers/SingleBrief.yml'
   reseller:
