@@ -98,6 +98,7 @@ class Tagds extends Controller
                             ->whereHas('accessRequests', function (Builder $query) use ($actingAs) {
                                 $query
                                     ->whereNotNull('approved_at')->whereNull('rejected_at')
+                                    ->whereNull('rejected_at')
                                     ->where('reseller_id', $actingAs->id);
                             });
                     })
